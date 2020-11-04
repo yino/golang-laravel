@@ -1,4 +1,4 @@
-package controller
+package corp
 
 import (
 	"github.com/gin-gonic/gin"
@@ -8,5 +8,6 @@ import (
 func IndexApi(c *gin.Context) {
 	c.String(http.StatusOK, "It works")
 }
+
 
 

@@ -5,5 +5,9 @@ import (
 )
 func Routers() *gin.Engine{
 	route := gin.Default()
-	route = Corp(route)
+
+	Corp(route)
+	Dealer(route)
+
+	return route
 }

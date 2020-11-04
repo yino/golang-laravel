@@ -1,14 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"web-gin-first/routes"
-	"path/filepath"
+	"gin-api/routes"
+	"gin-api/config"
+
 )
 
 func main(){
-	fmt.Println(filepath.Dir("./routes"))
-
-	router := routes.Router()
-	router.Run(":8000")
+	router := routes.Routers()
+	router.Run(config.AppPort)
 }
