@@ -8,7 +8,7 @@ var (
 	user = "root"
 	password = "root"
 	host = "127.0.0.1"
-	databases = "b2b_dev_common"
+	databases = "go-gin"
 	charset = "utf8"
 	port = 3306
 )
