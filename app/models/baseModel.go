@@ -9,24 +9,20 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"log"
 	_ "log"
-	"time"
 )
 
-var (
-	Db *gorm.DB
-)
-
+// @title 公用模型
+// @desc 常用字段
 type Model struct {
-	gorm.Model
 	ID        uint `gorm:"primary_key"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	DeletedAt *time.Time
+	CreatedAt int
+	UpdatedAt int
+	DeletedAt int
 }
 
 
 // 数据库连接
-func DbConnection() *gorm.DB {
+func Db() *gorm.DB {
 	mysqlConfig := config.MysqlConf()
 	var connect bytes.Buffer
 	connect.WriteString(mysqlConfig["User"].(string))
@@ -47,6 +43,6 @@ func DbConnection() *gorm.DB {
 		fmt.Println("数据库连接成功")
 	}
 	db.LogMode(true)
-	defer db.Close()
+	//defer db.Close()
 	return db
 }
