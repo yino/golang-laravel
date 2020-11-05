@@ -18,25 +18,25 @@
 #### 目录结构
 与laravel几乎一模一样
 
-    app								   应用目录
-    |---- exception				       返回http状态及异常接收
-	|----|---- baseException.go 		  panic异常接收文件
-    |---- http							web核心目录
-	|----|---- controller 		 	   控制器存放目录
-	|----|---- middleware 		 	   路由中间件存放目录
-    |---- models						  模型存放目录
-    |---- service						 业务编写目录
-    |---- validate						验证器目录
-    |---- helpers.go 					 常用函数文件
+    app					        应用目录
+    |---- exception				        返回http状态及异常接收
+	|----|---- baseException.go 	                panic异常接收文件
+    |---- http					web核心目录
+	|----|---- controller 		 	        控制器存放目录
+	|----|---- middleware 		 	        路由中间件存放目录
+    |---- models				        模型存放目录
+    |---- service					业务编写目录
+    |---- validate					验证器目录
+    |---- helpers.go 				常用函数文件
     config
-    |----|----app.go  					应用配置 如：ip、port等
-    |----|----databases.go  			  数据库配置
-    routes								路由文件夹
-	|----|---- route.go				   路由控制目录
-	|----|---- .....				      更多路由
-    sql								   测试sql文件存放目录
-    vendor								扩展包目录
-	|----|---- .....				      包存放
+    |----|----app.go  				应用配置 如：ip、port等
+    |----|----databases.go  			数据库配置
+    routes						路由文件夹
+	|----|---- route.go				路由控制目录
+	|----|---- .....				更多路由
+    sql						测试sql文件存放目录
+    vendor						扩展包目录
+	|----|---- .....				包存放
 
 
 * 还在完善中
