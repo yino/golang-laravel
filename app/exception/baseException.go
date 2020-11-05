@@ -11,9 +11,9 @@ import (
 )
 
 type exception struct {
-
 	Code int
 	Msg string
+	Data interface{}
 }
 
 func Recover(c *gin.Context) {
@@ -32,7 +32,7 @@ func Recover(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
 				"code": r.(exception).Code,
 				"msg": r.(exception).Msg,
-				"data": nil,
+				"data": r.(exception).Data,
 			})
 			// 终止后续接口调用，不加的话recover到异常后，还会继续执行接口里后续代码
 			c.Abort()
@@ -42,21 +42,20 @@ func Recover(c *gin.Context) {
 	c.Next()
 }
 
-// recover错误，转string
-func errorToString(r interface{}) string {
-	switch v := r.(type) {
-	case error:
-		return v.Error()
-	default:
-		return r.(string)
-	}
-}
-
 func BaseException(code int, msg string)  {
 
 	var err exception
 
 	err.Code = code
 	err.Msg = msg
+	err.Data = nil
 	panic(err)
+}
+
+func SuccessResponse(data interface{}){
+	var success exception
+	success.Code = 200
+	success.Msg = "success"
+	success.Data = data
+	panic(success)
 }

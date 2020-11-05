@@ -4,6 +4,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql" //这个一定要引入哦！！
 )
 
+
 // @title t_corp_admin
 type CorpAdminModel struct {
 	Model
@@ -18,3 +19,8 @@ type CorpAdminModel struct {
 func (CorpAdminModel) TableName() string {
 	return "t_corp_admin"
 }
+
+const (
+	// 禁用状态
+	CorpAdminStatusClose  = 2
+)

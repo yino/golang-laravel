@@ -8,5 +8,5 @@ const (
 	// 签名超时时间 s
 	SignExpiry = 120
 
-	AppDebug = true
+	AppDebug = false
 )
