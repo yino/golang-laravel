@@ -4,6 +4,15 @@ import (
 	"reflect"
 )
 
+var (
+	user = "root"
+	password = "root"
+	host = "127.0.0.1"
+	databases = "b2b_dev_common"
+	charset = "utf8"
+	port = 3306
+)
+
 // 小写不能被访问转换
 type mysqlConfig struct {
 	User      string
@@ -16,12 +25,12 @@ type mysqlConfig struct {
 
 func MysqlConf() map[string]interface{} {
 	config := mysqlConfig{
-		User:      "root",
-		Password:  "root",
-		Host:      "127.0.0.1",
-		Databases: "b2b_dev_common",
-		Charset:   "utf8",
-		Port:      3306,
+		User:      user,
+		Password:  password,
+		Host:      host,
+		Databases: databases,
+		Charset:   charset,
+		Port:      port,
 	}
 	elem := reflect.ValueOf(&config).Elem()
 
