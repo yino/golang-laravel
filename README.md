@@ -42,3 +42,4 @@
 * 还在完善中
 * 目前发现不合理地方 在返回success状态码 目前是用panic抛出异常返回，有为常理。
 * 注意路由文件编写，必须 在router.go文件中调用
+* 将sql/databases.go 文件 数据连接信息一改，运行 go run main.go 即可使用
