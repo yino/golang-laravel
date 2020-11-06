@@ -2,11 +2,10 @@ package exception
 
 import (
 	"fmt"
+	"gin-api/config"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
-	"reflect"
-	"gin-api/config"
 	"runtime/debug"
 )
 
@@ -23,7 +22,7 @@ func Recover(c *gin.Context) {
 			// 打印错误堆栈信息
 			// 如果要用到上述结构体 必须 断言一下类型 坑！！！
 			log.Printf("panic: %v\n", r.(exception).Code)
-			fmt.Println(reflect.TypeOf(r))
+			//fmt.Println(reflect.TypeOf(r))
 			// 显示错误log
 			if config.AppDebug == true {
 				debug.PrintStack()

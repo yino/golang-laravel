@@ -11,6 +11,8 @@ var (
 	databases = "go-gin-test"
 	charset = "utf8"
 	port = 3306
+	maxOpenConns = 2000 // mysql最大打开的连接数
+	maxIdleConns = 1500 // mysql闲置连接数
 )
 
 // 小写不能被访问转换
@@ -21,6 +23,8 @@ type mysqlConfig struct {
 	Databases string
 	Charset   string
 	Port      int
+	MaxOpenConns int
+	MaxIdleConns int
 }
 
 func MysqlConf() map[string]interface{} {
@@ -31,6 +35,8 @@ func MysqlConf() map[string]interface{} {
 		Databases: databases,
 		Charset:   charset,
 		Port:      port,
+		MaxOpenConns: maxOpenConns,
+		MaxIdleConns: maxIdleConns,
 	}
 	elem := reflect.ValueOf(&config).Elem()
 

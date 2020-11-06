@@ -2,16 +2,30 @@ package main
 
 import (
 	"fmt"
-	"gin-api/app/models"
-	_ "os"
-	_ "reflect"
 )
 
-func main() {
-	var corpAdmin []models.CorpAdminModel
-	models.Db().Find(&corpAdmin)
-	for _, item := range corpAdmin {
-		fmt.Println(item.Account)
-	}
-	//fmt.Println(corpAdmin)
+type name struct {
+	name string
+	age int
+}
+
+func one(name string, age int) int {
+	return age
+}
+
+
+func main()  {
+	//
+	//var arr [10]int
+	//var str string
+	//var a int
+	//var b bool
+	//var c float64
+	// list dict array map array
+	var tMap map[string]int
+	tMap["a"] = 1
+	var testName name
+	testName.name = "sun"
+	testName.age = 20
+	fmt.Println(testName)
 }
