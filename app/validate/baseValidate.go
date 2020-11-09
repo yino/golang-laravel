@@ -10,6 +10,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	enTranslations "github.com/go-playground/validator/v10/translations/en"
 	zhTranslations "github.com/go-playground/validator/v10/translations/zh"
+	"gin-api/extend/log"
 	"reflect"
 	"strings"
 )
@@ -117,15 +118,18 @@ func removeTopStruct(fields map[string]string) map[string]interface{} {
 //handler中调用的错误翻译方法
 func ErrResp(err error) *gin.H {
 	errs, ok := err.(validator.ValidationErrors)
-	fmt.Println(reflect.TypeOf(err))
+	log.Println("参数校验错误")
 	if !ok {
+		log.Println(err.Error())
 		return &gin.H{
 			"code": -1,
 			"msg":  err.Error(), // 翻译校验错误提示
 		}
 	}
+	msg := removeTopStruct(errs.Translate(trans))
+	log.Println(msg)
 	return &gin.H{
 		"code": -1,
-		"msg":  removeTopStruct(errs.Translate(trans)), // 翻译校验错误提示
+		"msg": msg , // 翻译校验错误提示
 	}
 }

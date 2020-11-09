@@ -3,15 +3,15 @@ package exception
 import (
 	"fmt"
 	"gin-api/config"
+	"gin-api/extend/log"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
 	"runtime/debug"
 )
 
 type exception struct {
 	Code int
-	Msg string
+	Msg  string
 	Data interface{}
 }
 
@@ -30,7 +30,7 @@ func Recover(c *gin.Context) {
 			// 封装通用json返回
 			c.JSON(http.StatusOK, gin.H{
 				"code": r.(exception).Code,
-				"msg": r.(exception).Msg,
+				"msg":  r.(exception).Msg,
 				"data": r.(exception).Data,
 			})
 			// 终止后续接口调用，不加的话recover到异常后，还会继续执行接口里后续代码
@@ -41,7 +41,7 @@ func Recover(c *gin.Context) {
 	c.Next()
 }
 
-func BaseException(code int, msg string)  {
+func BaseException(code int, msg string) {
 
 	var err exception
 
@@ -51,7 +51,7 @@ func BaseException(code int, msg string)  {
 	panic(err)
 }
 
-func SuccessResponse(data interface{}){
+func SuccessResponse(data interface{}) {
 	var success exception
 	success.Code = 200
 	success.Msg = "success"

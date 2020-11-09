@@ -31,10 +31,15 @@
     config
     |----|----app.go  				应用配置 如：ip、port等
     |----|----databases.go  			数据库配置
+    extend						自定义扩展包
+    |----|---- log		                        自定义日志package(与系统log相同，增加按小时分割日志)
     routes						路由文件夹
 	|----|---- route.go				路由控制目录
 	|----|---- .....				更多路由
     sql						测试sql文件存放目录
+    test 						压力测试文件目录
+    |----|---- abtest.sh                            ab压力测试文件
+    |----|---- .....				配置 Or Log文件          
     vendor						扩展包目录
 	|----|---- .....				包存放
 
@@ -43,3 +48,8 @@
 * 目前发现不合理地方 在返回success状态码 目前是用panic抛出异常返回，有为常理。
 * 注意路由文件编写，必须 在router.go文件中调用
 * 将sql/databases.go 文件 数据连接信息一改，运行 go run main.go 即可使用
+
+2020-11-09 更新
+1. mysql连接池验证 
+2. 增加自定义log模块 (在config中自定义log路径，package path /extend/log，按小时分割日志)
+

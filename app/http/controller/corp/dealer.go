@@ -11,7 +11,7 @@ func IndexController(c *gin.Context) {
 	var corpAdmin models.CorpAdminModel
 	var account string
 	account = "admin"
-	models.Db().Where("account = ?", account).First(&corpAdmin)
+	go models.Db().Where("account = ?", account).First(&corpAdmin)
 	fmt.Println(corpAdmin.Account)
 	c.String(http.StatusOK, "It works")
 }

@@ -2,6 +2,8 @@ package app
 
 import (
 	"fmt"
+	"gin-api/config"
+	"os"
 )
 
 func Capitalize(str string) string {
@@ -21,4 +23,17 @@ func Capitalize(str string) string {
 		}
 	}
 	return upperStr
+}
+// 判断文件夹是否存在
+func PathExists(path string) (bool) {
+	_, err := os.Stat(path)
+	if err == nil{
+		return true
+	}
+	return false
+}
+
+func GetLogDir() string{
+	dir, _ := os.Getwd()
+	return dir+ config.LogPath
 }

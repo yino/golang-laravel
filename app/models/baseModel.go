@@ -7,7 +7,8 @@ import (
 	_ "github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"log"
+	"gin-api/extend/log"
+	"time"
 )
 
 // @title 公用模型
@@ -39,10 +40,10 @@ func InitDbConnection() {
 	if err != nil {
 		// 打日志
 		log.Println("数据库连接错误----")
-		fmt.Println("数据库连接错误----")
 		fmt.Println(err)
 	} else {
-		fmt.Println("数据库连接成功")
+		log.SetPrefix("【success】")
+		log.Println("数据库连接成功")
 	}
 	if config.AppDebug == true {
 		DB.LogMode(true)
@@ -50,12 +51,16 @@ func InitDbConnection() {
 	DB.SingularTable(true)
 	DB.DB().SetMaxIdleConns(mysqlConfig["MaxIdleConns"].(int))
 	DB.DB().SetMaxOpenConns(mysqlConfig["MaxOpenConns"].(int))
+	DB.DB().SetConnMaxLifetime(time.Second * 60)
 	//defer DB.Close()
 }
 
 func Db() *gorm.DB {
-	fmt.Println("--------get Db-------")
-	//return InitDbConnection()
-	fmt.Println(DB.DB().Ping())
+	if err := DB.DB().Ping(); err != nil{
+		//DB.Close()
+		log.Println(err	)
+		log.Fatal("-------------数据库ping error-------------------")
+		InitDbConnection()
+	}
 	return DB
 }

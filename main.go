@@ -2,17 +2,24 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
+
+	"gin-api/app"
 	"gin-api/app/exception"
 	"gin-api/app/models"
 	"gin-api/app/validate"
 	"gin-api/config"
+	"gin-api/extend/log"
 	"gin-api/routes"
-	"github.com/gin-gonic/gin"
-	"os"
 )
 
 func main() {
 
+	log.SetOutPutDir(app.GetLogDir())
+	// log 模块
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+
+	log.SetOutPutDir(app.GetLogDir())
 	// 检测是否支持中文扩展 （用于验证器返回中文）
 	if err := validate.InitTrans("zh"); err != nil {
 		fmt.Printf("init trans failed, err:%v\n", err)
@@ -24,14 +31,6 @@ func main() {
 
 	// 创建新的会话
 	router := gin.Default()
-	// 设置 db连接池
-	//router.Use(func(c *gin.Context) {
-	//	c.Set("DBConnect", DB)
-	//	c.Next()
-	//})
-	fmt.Println("---------start-------")
-	fmt.Println(os.Getegid())
-	fmt.Println("---------end-------")
 	router.Use(exception.Recover)
 	router = routes.Routers(router)
 	router.Run(config.AppPort)

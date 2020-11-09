@@ -9,4 +9,6 @@ const (
 	SignExpiry = 120
 
 	AppDebug = false
+	// 以 根目录main.go为根
+	LogPath = "/storage/logs/"
 )
