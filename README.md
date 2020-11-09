@@ -4,8 +4,8 @@
 模仿PHP-Laravel，开箱即用
 
 #### package
-* gin
-* gorm
+* [gin](https://github.com/gin-gonic/gin)
+* [gorm](http://gorm.book.jasperxu.com/)
 ---
 #### 支持功能
 * 路由
@@ -52,7 +52,10 @@
 ---
 #### 更新log
 
-##### 2020-11-09 更新
-1. mysql连接池验证 
+##### 2020-11-09 
+1. mysql连接池验证 压力测试
 2. 增加自定义log模块 (在config中自定义log路径，package path /extend/log，按小时分割日志)
+3. 增加压力测试模块
+##### 2020-11-06
+1. 增加mysql连接池
 
