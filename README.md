@@ -49,7 +49,10 @@
 * 注意路由文件编写，必须 在router.go文件中调用
 * 将sql/databases.go 文件 数据连接信息一改，运行 go run main.go 即可使用
 
-2020-11-09 更新
+---
+#### 更新log
+
+#####2020-11-09 更新
 1. mysql连接池验证 
 2. 增加自定义log模块 (在config中自定义log路径，package path /extend/log，按小时分割日志)
 
