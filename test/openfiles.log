@@ -1,0 +1,14 @@
+COMMAND  PID USER   FD      TYPE DEVICE     SIZE              NODE NAME
+go      6457 root  cwd       DIR   0,13     4096  6192449488215215 /mnt/d/project/ubuntu-go/src/gin-api
+go      6457 root  rtd       DIR    0,2     4096  1407374883906624 /
+go      6457 root  txt       REG    0,2 14260480  1688849860684303 /usr/local/go/bin/go
+go      6457 root  mem       REG    0,0                     420367 /usr/local/go/bin/go (path dev=0,2, inode=1688849860684303)
+go      6457 root  mem       REG    0,0                     405949 /usr/lib/x86_64-linux-gnu/libc-2.31.so (path dev=0,2, inode=562949953827261)
+go      6457 root  mem       REG    0,0                     406320 /usr/lib/x86_64-linux-gnu/libpthread-2.31.so (path dev=0,2, inode=562949953827632)
+go      6457 root  mem       REG    0,0                     405831 /usr/lib/x86_64-linux-gnu/ld-2.31.so (path dev=0,2, inode=562949953827143)
+go      6457 root    0u      CHR    4,2          44191571343617452 /dev/tty2
+go      6457 root    1u      CHR    4,2          44191571343617452 /dev/tty2
+go      6457 root    2u      CHR    4,2          44191571343617452 /dev/tty2
+go      6457 root    4u  unknown                                   /unknown (stat: Operation not permitted)
+go      6457 root    5r     FIFO    0,0                     101905 pipe
+go      6457 root    6w     FIFO    0,0                     101905 pipe
