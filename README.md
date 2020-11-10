@@ -6,6 +6,7 @@
 #### package
 * [gin](https://github.com/gin-gonic/gin)
 * [gorm](http://gorm.book.jasperxu.com/)
+* [go-redis](https://github.com/go-redis/redis)
 ---
 #### 支持功能
 * 路由
@@ -58,4 +59,6 @@
 3. 增加压力测试模块
 ##### 2020-11-06
 1. 增加mysql连接池
+##### 2020-11-10
+1. 增加redis 连接池
 

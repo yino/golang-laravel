@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"gin-api/extend/redis"
 	"github.com/gin-gonic/gin"
 
 	"gin-api/app"
@@ -26,9 +27,14 @@ func main() {
 		return
 	}
 
-	// 创建连接池
+	// 创建MySql连接池
 	models.InitDbConnection()
+	// 创建redis 连接池
+	redis.InitConnectionPool()
 
+	// 关闭连接
+	defer redis.Connection().Close()
+	defer models.Db().Close()
 	// 创建新的会话
 	router := gin.Default()
 	router.Use(exception.Recover)
