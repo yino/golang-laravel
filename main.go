@@ -16,10 +16,9 @@ import (
 
 func main() {
 
-	log.SetOutPutDir(app.GetLogDir())
+
 	// log 模块
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
-
 	log.SetOutPutDir(app.GetLogDir())
 	// 检测是否支持中文扩展 （用于验证器返回中文）
 	if err := validate.InitTrans("zh"); err != nil {

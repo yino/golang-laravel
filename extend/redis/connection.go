@@ -3,6 +3,7 @@ package redis
 import (
 	"context"
 	"gin-api/config"
+	"gin-api/extend/log"
 	"github.com/go-redis/redis/v8"
 	"strconv"
 	"time"
@@ -16,6 +17,7 @@ type Client struct {
 var Redis *Client
 
 func InitConnectionPool() *Client {
+	log.Println("创建 Redis 连接池")
 	connect := connection()
 	ctx := context.Background()
 	Redis = &Client{
@@ -56,4 +58,3 @@ func Connection() *redis.Client {
 func Ctx() context.Context {
 	return Redis.Ctx
 }
-

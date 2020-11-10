@@ -15,5 +15,8 @@ func Corp(router *gin.Engine) {
 		group.GET("/index", corp.IndexController)
 	}
 
+	testGroup := router.Group("/corp/test")
+	testGroup.GET("/redis", corp.RedisController)
+
 
 }
