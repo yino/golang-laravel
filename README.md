@@ -1,12 +1,13 @@
 # [Golang-Laravel](https://github.com/sk532359025/golang-laravel)
 
 
-模仿PHP-Laravel，开箱即用
+模仿PHP-Laravel，开箱即用、go语言版的laravel，phper转Go开发 可以立马上手~
 
 #### package
 * [gin](https://github.com/gin-gonic/gin)
 * [gorm](http://gorm.book.jasperxu.com/)
 * [go-redis](https://github.com/go-redis/redis)
+* [go lavael](https://github.com/sk532359025/golang-laravel)
 ---
 #### 支持功能
 * 路由
