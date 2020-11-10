@@ -12,3 +12,4 @@ const (
 	// 以 根目录main.go为根
 	LogPath = "/storage/logs/"
 )
+
