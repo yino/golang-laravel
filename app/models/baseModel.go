@@ -3,11 +3,11 @@ package models
 import (
 	"bytes"
 	"fmt"
-	"gin-api/config"
+	"go-laravel/config"
 	_ "github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"gin-api/extend/log"
+	"go-laravel/extend/log"
 	"time"
 )
 
@@ -40,7 +40,7 @@ func InitDbConnection() {
 	if err != nil {
 		// 打日志
 		log.Println("数据库连接错误----")
-		fmt.Println(err)
+		log.Panic(err)
 	} else {
 		log.SetPrefix("【success】")
 		log.Println("数据库连接成功")

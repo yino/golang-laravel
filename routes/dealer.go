@@ -1,6 +1,6 @@
 package routes
 import (
-	"gin-api/app/http/controller/dealer"
+	"go-laravel/app/http/controller/dealer"
 	"github.com/gin-gonic/gin"
 )
 

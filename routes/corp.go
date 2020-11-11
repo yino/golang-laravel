@@ -1,15 +1,15 @@
 package routes
 
 import (
-	"gin-api/app/http/controller/corp"
-	"gin-api/app/http/middleware"
 	"github.com/gin-gonic/gin"
+	"go-laravel/app/http/controller/corp"
+	"go-laravel/app/http/middleware"
 )
 
 func Corp(router *gin.Engine) {
 	// 创建 corp 分组
 	group := router.Group("/corp")
-	group.POST("login",corp.LoginController)
+	group.POST("login", corp.LoginController)
 	group.Use(middleware.CorpLoginAuth())
 	{
 		group.GET("/index", corp.IndexController)
@@ -17,6 +17,5 @@ func Corp(router *gin.Engine) {
 
 	testGroup := router.Group("/corp/test")
 	testGroup.GET("/redis", corp.RedisController)
-
 
 }

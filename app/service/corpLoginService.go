@@ -3,9 +3,9 @@ package service
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"gin-api/app/exception"
-	"gin-api/app/models"
-	"gin-api/extend/log"
+	"go-laravel/app/exception"
+	"go-laravel/app/models"
+	"go-laravel/extend/log"
 	"time"
 )
 

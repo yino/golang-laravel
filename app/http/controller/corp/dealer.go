@@ -2,7 +2,7 @@ package corp
 
 import (
 	"fmt"
-	"gin-api/app/models"
+	"go-laravel/app/models"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

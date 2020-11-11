@@ -2,11 +2,11 @@ package autoload
 
 import (
 	"fmt"
-	"gin-api/app"
-	"gin-api/app/models"
-	"gin-api/app/validate"
-	"gin-api/extend/log"
-	"gin-api/extend/redis"
+	"go-laravel/app"
+	"go-laravel/app/models"
+	"go-laravel/app/validate"
+	"go-laravel/extend/log"
+	"go-laravel/extend/redis"
 )
 
 // 加载log

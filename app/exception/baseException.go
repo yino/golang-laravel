@@ -2,8 +2,8 @@ package exception
 
 import (
 	"fmt"
-	"gin-api/config"
-	"gin-api/extend/log"
+	"go-laravel/config"
+	"go-laravel/extend/log"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"runtime/debug"

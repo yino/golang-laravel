@@ -10,7 +10,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	enTranslations "github.com/go-playground/validator/v10/translations/en"
 	zhTranslations "github.com/go-playground/validator/v10/translations/zh"
-	"gin-api/extend/log"
+	"go-laravel/extend/log"
 	"reflect"
 	"strings"
 )

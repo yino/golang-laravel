@@ -1,14 +1,14 @@
 package main
 
 import (
-	"gin-api/extend/autoload"
-	"gin-api/extend/redis"
 	"github.com/gin-gonic/gin"
+	"go-laravel/extend/autoload"
+	"go-laravel/extend/redis"
 
-	"gin-api/app/exception"
-	"gin-api/app/models"
-	"gin-api/config"
-	"gin-api/routes"
+	"go-laravel/app/exception"
+	"go-laravel/app/models"
+	"go-laravel/config"
+	"go-laravel/routes"
 )
 
 func main() {

@@ -2,9 +2,9 @@ package corp
 
 import (
 	_ "fmt"
-	"gin-api/app/service"
-	"gin-api/app/validate"
-	"gin-api/extend/log"
+	"go-laravel/app/service"
+	"go-laravel/app/validate"
+	"go-laravel/extend/log"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"net/http"

@@ -2,7 +2,7 @@ package app
 
 import (
 	"fmt"
-	"gin-api/config"
+	"go-laravel/config"
 	"os"
 )
 

@@ -1,8 +1,8 @@
 package corp
 
 import (
-	"gin-api/extend/log"
-	"gin-api/extend/redis"
+	"go-laravel/extend/log"
+	"go-laravel/extend/redis"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"

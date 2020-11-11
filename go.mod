@@ -1,4 +1,4 @@
-module gin-api
+module go-laravel
 
 go 1.15
 

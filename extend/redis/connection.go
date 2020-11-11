@@ -2,8 +2,8 @@ package redis
 
 import (
 	"context"
-	"gin-api/config"
-	"gin-api/extend/log"
+	"go-laravel/config"
+	"go-laravel/extend/log"
 	"github.com/go-redis/redis/v8"
 	"strconv"
 	"time"
@@ -24,6 +24,20 @@ func InitConnectionPool() *Client {
 		Connect: connect,
 		Ctx:     ctx,
 	}
+
+	//可连接性检测
+	_, err := connect.Ping(ctx).Result()
+	if err != nil {
+		log.Panic(err)
+	}
+
+
+	poolstats := connect.PoolStats()
+	log.Printf("redis 总连接数=%d,空闲连接数=%d,已经移除的连接数=%d\n",
+		poolstats.TotalConns,
+		poolstats.IdleConns,
+		poolstats.StaleConns)
+
 	return Redis
 }
 
