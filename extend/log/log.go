@@ -393,7 +393,7 @@ func Output(calldepth int, s string) error {
 func SetOutPutDir(dir string) {
 	year := time.Now().Format("2006")
 	month := time.Now().Format("01")
-	day := time.Now().Format("02")
+	day := strconv.Itoa(time.Now().Day())
 
 	date := year + "/" + month + "/" + day
 	dirPath := dir + "/" + date
