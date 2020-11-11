@@ -52,6 +52,25 @@
 * 将sql/databases.go 文件 数据连接信息一改，运行 go run main.go 即可使用
 
 ---
+#### 项目注意事项
+1. 重新定义 log(`/extend/log`)模块 将日志分割 storage/logs/`Year`/`Month`/`Day`/`Hour.txt`
+2. gorm 更改了 软删除 默认是 is null(`/vendor/github.com/jinzhu/gorm/scope.go line 719`) 本项目更改为 deleted_at=0 根据自己项目需求更改
+3. `config/database.go` mysql 连接配置 需
+4. `config/redis.go` redis 连接配置 需修改
+5. 路由 在 `/routes` 中定义 要在 route.go 引入自己创建的 目前并不会自动引入
+6. 运行命令  go run main.go
+
+
+---
+#### go语言常用简介
+`自己总结有误则提醒，修改`
+1. defer 延迟执行 defer标识的函数 在当前函数末尾执行 多个defer时以“压栈”的方式执行（先进后出）
+    例：main.go 中的 mysql、redis关闭连接
+2. struct 结构体 go 语言没有class的概念 但是可以通过结构体来实现 class
+3. 输出到控制台 fmt.Println("string") 本项目中 可以使用log.Println("....") 输出到控制台同时记录log
+4. 常用数据结构 map int string float64 struct interface等
+5. 在数据类型是interface时 引用时 要进行‘断言’ `示例：/app/models/baseModel.go line 29`
+---
 #### 更新log
 
 ##### 2020-11-09 

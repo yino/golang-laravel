@@ -2,11 +2,10 @@ package models
 
 import (
 	"bytes"
-	"fmt"
-	"go-laravel/config"
 	_ "github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"go-laravel/config"
 	"go-laravel/extend/log"
 	"time"
 )
@@ -24,7 +23,7 @@ var DB *gorm.DB
 // 数据库连接
 func InitDbConnection() {
 
-	fmt.Println("数据库连接池创建")
+	log.Println("数据库连接池创建")
 	mysqlConfig := config.MysqlConf()
 	var connect bytes.Buffer
 	connect.WriteString(mysqlConfig["User"].(string))
