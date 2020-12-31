@@ -86,8 +86,8 @@
 2. 增加autoload 将方法封装 使入口文件简单清晰
 ##### 2020-12-31 示例
 1. 增加 example 示例 包含 server(BE)、template(FE)
-    a. 可运行docker-compose （go 环境）
-    b. 将 server/sql 文件导入到本地库中
-    c. 修改config 的ip
-    d. post-man-go-api.json 所有的 api json 文件
-    e. server /extend 中增加了对redis 的log记录 以及前缀
+2. 可运行docker-compose （go 环境）
+3. 将 server/sql 文件导入到本地库中
+4. 修改config 的ip
+5. post-man-go-api.json 所有的 api json 文件
+6. server /extend 中增加了对redis 的log记录 以及前缀
