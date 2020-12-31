@@ -1,0 +1,21 @@
+# refer: https://github.com/golangci/golangci-lint/blob/master/.golangci.yml
+run:
+  timeout: 5m
+
+linters-settings:
+  maligned:
+    suggest-new: true
+  gocritic:
+    disabled-checks:
+      - singleCaseSwitch
+  funlen:
+    lines: 100
+    statements: 50
+
+linters:
+  disable:
+    - gochecknoglobals
+    - nlreturn
+    - gofumpt
+    - exhaustive
+  enable-all: true

@@ -1,0 +1,18 @@
+version: "2"
+services:
+  yurendao:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yurendao:v1.0
+    volumes:
+      - .:/go/src/yurendao.api
+    command: bash -c "cd /go/src/yurendao.api; go mod tidy; go build main.go; ./main"
+    ports:
+    - "9520:8000"
+    tty: true
+    environment:
+      - ENV=test
+    container_name: yurendao
+
+

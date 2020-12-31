@@ -1,0 +1,764 @@
+{
+	"info": {
+		"_postman_id": "b40f3bee-e054-4d87-88b7-839c5fbd4bc3",
+		"name": "chen-tuiben",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "corp",
+			"item": [
+				{
+					"name": "member",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/corp/member/index?page=1&mobile=&size=1&name=7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"member",
+										"index"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "mobile",
+											"value": ""
+										},
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "name",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"孙17\",\r\n    \"mobile\": \"15829090357\",\r\n    \"integral\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/corp/member/add",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"member",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "孙",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "15829090356",
+											"type": "text"
+										},
+										{
+											"key": "integral",
+											"value": "16",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/corp/member/edit",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"member",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "info",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/corp/member/info?id=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"member",
+										"info"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/corp/member/delete?id=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"member",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add integral",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 2,\r\n    \"member_id\": 11, \r\n    \"money\": 10, \r\n    \"integral\": 20\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/corp/member/add_integral",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"member",
+										"add_integral"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/corp/product/index?page=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"index"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "mobile",
+											"value": "15829090357",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "测试推本",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "mobile",
+											"value": "15829090351",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "integral",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/corp/product/add",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "你好呀",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "15829090356",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "integral",
+											"value": "16",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/corp/product/edit",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "info",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/corp/product/info?id=2",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"info"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/corp/product/delete?id=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all_list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/corp/product/all_list",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"all_list"
+									],
+									"query": [
+										{
+											"key": "mobile",
+											"value": "15829090357",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "上传图片",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/C:/Users/pc/Pictures/微信图片_20200819154458.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/corp/product/upload",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"product",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "record",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/corp/record/index?member_id=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"corp",
+										"record",
+										"index"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "mobile",
+											"value": "15829090357",
+											"disabled": true
+										},
+										{
+											"key": "member_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody)\r",
+									"if (data.code == 200){\r",
+									"    var token = data.data.token;\r",
+									"    console.log(token);\r",
+									"    pm.environment.set(\"token\",token)\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"sun123\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/corp/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"corp",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "首页",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/corp/index",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"corp",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get info ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/corp/get_info",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"corp",
+								"get_info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/status",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
