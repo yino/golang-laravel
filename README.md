@@ -1,4 +1,4 @@
-# [Golang-Laravel](https://github.com/sk532359025/golang-laravel)
+# [Golang-Laravel](https://github.com/sun17ya/golang-laravel)
 
 
 模仿PHP-Laravel，开箱即用、go语言版的laravel，phper转Go开发 可以立马上手~
