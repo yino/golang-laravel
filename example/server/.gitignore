@@ -1,5 +1,5 @@
 /storage
 /vendor
-/config/app.go
-/config/database.go
-/config/redis.go
+#/config/app.go
+#/config/database.go
+#/config/redis.go
